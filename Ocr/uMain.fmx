@@ -1,0 +1,110 @@
+object FrmMain: TFrmMain
+  Left = 0
+  Top = 0
+  ClientHeight = 605
+  ClientWidth = 414
+  Fill.Kind = Solid
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 3
+  object LytBottom: TLayout
+    Align = MostBottom
+    Position.Y = 555.000000000000000000
+    Size.Width = 414.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object BtnCamera: TSpeedButton
+      Align = MostLeft
+      Position.Y = 1.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'cameratoolbutton'
+      Text = 'TakePhotoFromCameraAction1'
+      OnClick = BtnCameraClick
+    end
+    object BtnOk: TSpeedButton
+      Align = MostRight
+      Position.X = 341.000000000000000000
+      Position.Y = 4.000000000000000000
+      Size.Width = 73.000000000000000000
+      Size.Height = 42.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'segmentedbuttonright'
+      Text = 'OK'
+      Visible = False
+      OnClick = BtnOkClick
+    end
+  end
+  object LytTop: TLayout
+    Align = MostTop
+    Size.Width = 414.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object Rectangle1: TRectangle
+      Align = Client
+      Fill.Color = claWhite
+      Sides = [Bottom]
+      Size.Width = 414.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object Text1: TText
+      Align = Client
+      Size.Width = 414.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Google OCR'
+      TextSettings.Font.Size = 24.000000000000000000
+    end
+  end
+  object LytImg: TLayout
+    Align = Client
+    Size.Width = 414.000000000000000000
+    Size.Height = 350.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    object ImgPhoto: TImage
+      MultiResBitmap.Height = 400
+      MultiResBitmap.Width = 600
+      MultiResBitmap = <
+        item
+        end>
+      Align = Client
+      Size.Width = 414.000000000000000000
+      Size.Height = 350.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
+  object LytMemo: TLayout
+    Align = Bottom
+    Position.Y = 400.000000000000000000
+    Size.Width = 414.000000000000000000
+    Size.Height = 155.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    object MemResponse: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      DataDetectorTypes = []
+      Align = Client
+      Size.Width = 414.000000000000000000
+      Size.Height = 155.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Viewport.Width = 406.000000000000000000
+      Viewport.Height = 147.000000000000000000
+    end
+  end
+  object ActionList1: TActionList
+    Left = 176
+    Top = 168
+    object TakePhotoFromCameraAction1: TTakePhotoFromCameraAction
+      Category = 'Media Library'
+      OnDidFinishTaking = TakePhotoFromCameraAction1DidFinishTaking
+    end
+  end
+end
