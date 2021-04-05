@@ -204,12 +204,16 @@ begin
   Dest.ImgType := ImgBase64;
   Dest.Features := FeaTextDetection;
   Dest.Languages := [];
+  Dest.ImgSource := '';
 end;
 
 { TOcrResult }
 
 class operator TOcrResult.Initialize(out Dest: TOcrResult);
 begin
+  Dest.Error := False;
+  Dest.ErrorStr := '';
+  Dest.TextStr := '';
   Dest.WordArr := [];
 end;
 
